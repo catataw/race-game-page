@@ -1,1 +1,61 @@
+---
+const stats = [
+  { number: "350", label: "KM/H Máximos" },
+  { number: "12", label: "Circuitos" },
+  { number: "20", label: "Carros" },
+  { number: "1M+", label: "Jogadores" }
+];
+---
 
+<section class="stats">
+  <div class="stats-grid">
+    {stats.map(stat => (
+      <div class="stat-item">
+        <div class="stat-number">{stat.number}</div>
+        <div class="stat-label">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding: 100px 50px;
+    background: #000;
+    text-align: center;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .stat-item {
+    padding: 30px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff0000, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .stats {
+      padding: 50px 20px;
+    }
+  }
+</style>
