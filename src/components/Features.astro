@@ -1,0 +1,87 @@
+---
+const features = [
+  {
+    icon: "🏎️",
+    title: "Carros Realísticos",
+    description: "Pilote os mais icônicos carros de Fórmula 1 com física realística e controles precisos que te fazem sentir a adrenalina da pista."
+  },
+  {
+    icon: "🏁",
+    title: "Circuitos Épicos", 
+    description: "Corra nos circuitos mais famosos do mundo, desde Mônaco até Interlagos, cada um com seus desafios únicos e curvas emocionantes."
+  },
+  {
+    icon: "⚡",
+    title: "Velocidade Extrema",
+    description: "Experimente a velocidade máxima com gráficos fluidos e efeitos visuais impressionantes que intensificam cada corrida."
+  }
+];
+---
+
+<section class="features">
+  <div class="features-grid">
+    {features.map(feature => (
+      <div class="feature-card">
+        <div class="feature-icon">{feature.icon}</div>
+        <h3 class="feature-title">{feature.title}</h3>
+        <p class="feature-description">{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 100px 50px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0c0c0c 100%);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff0000, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .feature-description {
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .features {
+      padding: 50px 20px;
+    }
+  }
+</style>
