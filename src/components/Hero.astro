@@ -1,0 +1,99 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="logo">F1 RACING</h1>
+    <p class="tagline">ACELERE RUMO À GLÓRIA</p>
+    <button class="cta-button" id="startGameBtn">JOGAR AGORA</button>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 100, 255, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    animation: gridMove 20s linear infinite;
+  }
+
+  .hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff0000, #ff4500, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    letter-spacing: 2px;
+  }
+
+  .cta-button {
+    background: linear-gradient(45deg, #ff0000, #ff4500);
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ff4500, #ffd700);
+  }
+
+  @media (max-width: 768px) {
+    .logo { 
+      font-size: 2.5rem; 
+    }
+    .tagline { 
+      font-size: 1.2rem; 
+    }
+    .cta-button { 
+      padding: 15px 35px; 
+      font-size: 1rem; 
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('startGameBtn')?.addEventListener('click', () => {
+    window.location.href = '/game';
+  });
+</script>
